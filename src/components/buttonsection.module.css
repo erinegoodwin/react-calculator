@@ -1,0 +1,53 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn {
+    padding: 10px;
+    display: flex;
+    width: 100px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 1em;
+    font-family: source-code-pro, monospace;
+    border: #000000 solid 2px;
+}
+
+.btn:hover{
+    background-color: #cccccc;
+    cursor: pointer;
+}
+
+.operator {
+    background-color: #2aeaf1;
+}
+
+.operator:hover {
+    background-color: #21b8bd;
+    cursor: pointer;
+}
+
+.functional {
+    background-color: #2d59f1;
+    color: #ffffff;
+}
+
+.functional:hover {
+    background-color: #2546bd;
+    cursor: pointer;
+}
+
+.double {
+    width: 255px;
+}
