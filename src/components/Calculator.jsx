@@ -41,7 +41,7 @@ function Calculator(props) {
       } else {
         setDisplay(display + e.target.textContent);
       }
-    } 
+    }
     //Make sure equation does not start with an operator.
     //Special case for negative sign/subtract below.
     else if (
@@ -52,14 +52,13 @@ function Calculator(props) {
       if (evaluated === true) {
         setDisplay(display + e.target.textContent);
         setEvaluated(false);
-      } 
-      else if (
+      } else if (
         display === "0" ||
         checkLastChar(display) === "*" ||
         checkLastChar(display) === "+" ||
         checkLastChar(display) === "/" ||
         checkLastChar(display) === "-" ||
-        checkLastChar(display) === '.'
+        checkLastChar(display) === "."
       ) {
         return;
       } else {
@@ -74,13 +73,15 @@ function Calculator(props) {
       if (evaluated === true) {
         setDisplay(display + e.target.textContent);
         setEvaluated(false);
-      }
-      else if (display === "0") {
+      } else if (display === "0") {
         setDisplay(e.target.textContent);
-      } else if (checkLastChar(display) === "-" || checkLastChar(display) === '.') {
+      } else if (
+        checkLastChar(display) === "-" ||
+        checkLastChar(display) === "."
+      ) {
         return;
       } else {
-        setDisplay(display + e.target.textContent)
+        setDisplay(display + e.target.textContent);
       }
     }
     //Currently, all-clear and clear buttons have the same functionality:
@@ -92,21 +93,19 @@ function Calculator(props) {
     }
     //When the equal button is pressed, check to make sure that the display
     //does not end with an operator or decimal, then evaluate the input and change the
-    //display to reflect the evaluated equation. 
+    //display to reflect the evaluated equation.
     else if (e.target.id === "equal") {
-      if (evaluated === true){
+      if (evaluated === true) {
         return;
-      }
-      else if (
+      } else if (
         checkLastChar(display) === "*" ||
         checkLastChar(display) === "+" ||
         checkLastChar(display) === "/" ||
         checkLastChar(display) === "-" ||
-        checkLastChar(display) === '.'
+        checkLastChar(display) === "."
       ) {
         return;
-      }
-       else {
+      } else {
         display = evaluate(display);
         setDisplay(display);
         setEvaluated(true);
