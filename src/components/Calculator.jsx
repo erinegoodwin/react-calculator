@@ -87,9 +87,24 @@ function Calculator(props) {
     //Currently, all-clear and clear buttons have the same functionality:
     //When clicked, set the display to the default (0) and set the state to not evaluated.
     //Will be changing the clear button to a DEL button.
-    else if (e.target.textContent === "AC" || e.target.textContent === "C") {
+    else if (e.target.textContent === "AC") {
       setDisplay("0");
       setEvaluated(false);
+    } 
+    //Handle deleting previously input character
+    //Don't allow the display to be empty
+    else if (e.target.textContent === "DEL") {
+      if (evaluated === true) {
+        setDisplay("0");
+        setEvaluated(false);
+        return;
+      } else {
+        let editedDisplay = display.slice(0, -1);
+        if (editedDisplay === "") {
+          setDisplay("0");
+          setEvaluated(false);
+        } else setDisplay(editedDisplay);
+      }
     }
     //When the equal button is pressed, check to make sure that the display
     //does not end with an operator or decimal, then evaluate the input and change the

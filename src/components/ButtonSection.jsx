@@ -16,7 +16,7 @@ function ButtonSection({ handleClick }) {
           onClick={handleClick}
           className={`${classes.btn} ${classes.functional}`}
         >
-          C
+          DEL
         </button>
         <button
           name="operator"
