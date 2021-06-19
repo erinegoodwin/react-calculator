@@ -2,7 +2,7 @@ import Display from "./Display";
 import ButtonSection from "./ButtonSection";
 import classes from "./calculator.module.css";
 import { useState } from "react";
-import { evaluate } from "mathjs";
+import { evaluate, format } from "mathjs";
 
 function Calculator(props) {
   let [display, setDisplay] = useState("0");
@@ -106,7 +106,7 @@ function Calculator(props) {
       ) {
         return;
       } else {
-        display = evaluate(display);
+        display = format(evaluate(display), 7);
         setDisplay(display);
         setEvaluated(true);
       }

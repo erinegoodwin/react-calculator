@@ -5,14 +5,17 @@
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.bigbuttonrow {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
 }
 
 .btn {
     padding: 10px;
-    display: flex;
-    width: 100px;
     margin: 10px;
     align-items: center;
     justify-content: center;
@@ -46,8 +49,4 @@
 .functional:hover {
     background-color: #2546bd;
     cursor: pointer;
-}
-
-.double {
-    width: 255px;
 }
